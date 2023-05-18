@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\Esma\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\Esma\\.nuget\\packages"
+    ]
+  }
+}
