@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace mediumish.Models
 {
@@ -12,6 +14,8 @@ namespace mediumish.Models
         [Required(ErrorMessage = "Description can not be null")]
         public string Description { get; set; }
         public string Image { get; set; }
+        [NotMapped]
+        public IFormFile Photo { get; set; }
         public DateTime CreatedTime { get; set; } = DateTime.UtcNow.AddHours(4);
         public bool IsFavorite { get; set; }
         public bool IsDeactive { get; set; }

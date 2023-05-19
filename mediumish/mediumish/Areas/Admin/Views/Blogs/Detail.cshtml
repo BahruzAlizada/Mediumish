@@ -1,0 +1,11 @@
+﻿@model Blog
+
+<img src="~/assets/img/blog/@Model.Image" style="height:350px;width:350px; object-fit:cover;" />
+<h2>@Model.Title</h2>
+<p>@Model.Author.Name @Model.CreatedTime.ToString("dd MMMM, yyyy")</p>
+<p>@Html.Raw(Model.Description)</p>
+@foreach(BlogTag blogtag in Model.BlogTags)
+{
+	<div>@blogtag.Tag.Name</div>
+}
+<a asp-action="Index" class="btn btn-secondary">Go Back</a>

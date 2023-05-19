@@ -1,0 +1,91 @@
+﻿@model Blog
+
+<div class="row">
+    <div class="col-8">
+        <div class="card mb-4">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">Update Blog</h5>
+
+            </div>
+            <div class="card-body">
+                <form method="post" enctype="multipart/form-data">
+
+                    <div class="mb-3 form-group">
+                        <label asp-for="Photo" class="form-label">Photo</label>
+                        <input asp-for="Photo" class="form-control" />
+                        <span class="text-danger" asp-validation-for="Photo"></span>
+                    </div>
+
+                    <div class="mb-3 form-group">
+                        <label asp-for="Title" class="form-label">Title</label>
+                        <input asp-for="Title" class="form-control" />
+                        <span class="text-danger" asp-validation-for="Title"></span>
+                    </div>
+
+                    <div class="mb-3 form-group">
+                        <label asp-for="Description" class="form-label">Description</label>
+                        <textarea asp-for="Description" id="editor" class="form-control"></textarea>
+                        <span class="text-danger" asp-validation-for="Description"></span>
+                    </div>
+
+                    <div class="mb-3 form-group">
+                        <label asp-for="IsFavorite" class="form-label">Not Favorite</label>
+                        <input asp-for="IsFavorite" value="false" type="radio" />
+                        <label asp-for="IsFavorite" class="form-label">Favorite</label>
+                        <input asp-for="IsFavorite" value="true" type="radio" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">Select Author</label>
+                        <select class="form-control" name="authorId">
+                            @foreach (Author author in ViewBag.Authors)
+                            if(Model.AuthorId==author.Id)
+                            {
+                                <option selected value="@author.Id">@author.Name</option>
+                            }
+                            else
+                            {
+                                <option value="@author.Id">@author.Name</option>
+                            }
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">Select Tags</label>
+                        <select multiple class="form-control" name="tagsId[]">
+                            @foreach (Tag tag in ViewBag.Tags)
+                            {
+                                if (Model.BlogTags.Any(x => x.TagId == tag.Id))
+                                {
+                                    <option selected value="@tag.Id">@tag.Name</option>
+                                }
+                                else
+                                {
+                                    <option value="@tag.Id">@tag.Name</option>
+                                }
+                            }
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <a class="btn btn-secondary" asp-action="Index">Go Back</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.ckeditor.com/ckeditor5/37.1.0/classic/ckeditor.js"></script>
+
+<script>
+    ClassicEditor
+        .create(document.querySelector('#editor'))
+        .catch(error => {
+            console.error(error);
+        });
+</script>
+
+
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}
