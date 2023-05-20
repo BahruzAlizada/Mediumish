@@ -162,3 +162,8 @@ C:\Users\Esma\Desktop\Mediumish\mediumish\mediumish\obj\Debug\net5.0\Razor\Areas
 C:\Users\Esma\Desktop\Mediumish\mediumish\mediumish\obj\Debug\net5.0\Razor\Areas\Admin\Views\Blogs\Create.cshtml.g.cs
 C:\Users\Esma\Desktop\Mediumish\mediumish\mediumish\obj\Debug\net5.0\Razor\Areas\Admin\Views\Blogs\Detail.cshtml.g.cs
 C:\Users\Esma\Desktop\Mediumish\mediumish\mediumish\obj\Debug\net5.0\Razor\Areas\Admin\Views\Blogs\Update.cshtml.g.cs
+C:\Users\Esma\Desktop\Mediumish\mediumish\mediumish\obj\Debug\net5.0\Razor\Views\Shared\Components\FeaturedBlog\Default.cshtml.g.cs
+C:\Users\Esma\Desktop\Mediumish\mediumish\mediumish\obj\Debug\net5.0\Razor\Views\Home\Author.cshtml.g.cs
+C:\Users\Esma\Desktop\Mediumish\mediumish\mediumish\obj\Debug\net5.0\Razor\Views\Home\Detail.cshtml.g.cs
+C:\Users\Esma\Desktop\Mediumish\mediumish\mediumish\obj\Debug\net5.0\Razor\Views\Shared\Components\RelatedPost\Default.cshtml.g.cs
+C:\Users\Esma\Desktop\Mediumish\mediumish\mediumish\obj\Debug\net5.0\Razor\Views\Shared\_loadMoreBlog.cshtml.g.cs

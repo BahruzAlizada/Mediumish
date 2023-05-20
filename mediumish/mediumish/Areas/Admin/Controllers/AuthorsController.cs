@@ -132,11 +132,11 @@ namespace mediumish.Areas.Admin.Controllers
                     ModelState.AddModelError("Photo", "Select image type");
                     return View();
                 }
-                if (author.Photo.IsOlder256Kb())
-                {
-                    ModelState.AddModelError("Photo", "Max 256Kb");
-                    return View();
-                }
+                //if (author.Photo.IsOlder256Kb())
+                //{
+                //    ModelState.AddModelError("Photo", "Max 256Kb");
+                //    return View();
+                //}
                 string folder = Path.Combine(_env.WebRootPath, "assets", "img");
                 author.Image = await author.Photo.SaveFileAsync(folder);
                 string path = Path.Combine(_env.WebRootPath, folder, dbauthor.Image);

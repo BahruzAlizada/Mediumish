@@ -1,0 +1,59 @@
+﻿@model Blog
+<div class="container">
+	<div class="row">
+
+		<!-- Begin Post -->
+		<div class="col-md-10 col-md-offset-2 col-xs-12">
+			<div class="mainheading">
+
+				<!-- Begin Top Meta -->
+				<div class="row post-top-meta">
+					<div class="col-md-2">
+						<a asp-action="Author" asp-route-id="@Model.Author.Id"><img class="author-thumb" src="~/assets/img/@Model.Author.Image" alt="Sal"></a>
+					</div>
+					<div class="col-md-10">
+						<a class="link-dark" href="author.html">@Model.Author.Name</a><a href="#" class="btn follow">Follow</a>
+						<span class="author-description">Founder of WowThemes.net and creator of <b>"Mediumish"</b> theme that you're currently previewing. Developing professional premium themes, templates, plugins, scripts since 2012.</span>
+						<span class="post-date">@Model.CreatedTime.ToString("dd MMMM, yyyy")</span>
+					</div>
+				</div>
+				<!-- End Top Menta -->
+
+				<h1 class="posttitle">@Model.Title</h1>
+
+			</div>
+
+			<!-- Begin Featured Image -->
+			<img class="featured-image img-fluid" src="~/assets/img/blog/@Model.Image" alt="">
+			<!-- End Featured Image -->
+			<!-- Begin Post Content -->
+			<div class="article-post">
+				<p>@Html.Raw(Model.Description)</p>
+			</div>
+			<!-- End Post Content -->
+			<!-- Begin Tags -->
+			<div class="after-post-tags">
+				<ul class="tags">
+					@foreach (BlogTag tag in Model.BlogTags)
+					{
+						<li><a href="#">@tag.Tag.Name</a></li>
+					}
+				</ul>
+			</div>
+			<!-- End Tags -->
+
+		</div>
+		<!-- End Post -->
+
+<!-- Begin Related -->
+<div class="graybg">
+	<div class="container">
+		<div class="row listrecent listrelated">
+			@await Component.InvokeAsync("RelatedPost")
+		</div>
+	</div>
+</div>
+<!-- End Related Posts -->
+
+	</div>
+</div>
