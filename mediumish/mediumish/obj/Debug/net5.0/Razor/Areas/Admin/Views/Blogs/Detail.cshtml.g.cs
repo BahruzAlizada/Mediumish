@@ -26,8 +26,15 @@ using mediumish.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "C:\Users\Esma\Desktop\Mediumish\mediumish\mediumish\Areas\Admin\Views\_ViewImports.cshtml"
+using mediumish.ViewsModel;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"faaae1003631d479e40adedcec249962e1e0c6c1", @"/Areas/Admin/Views/Blogs/Detail.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"fd54c713759d0a6dc2e92c64d79c3b8028ed2b48", @"/Areas/Admin/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"1f1685d678b2c5304b05453d93f9e6f4930594bd", @"/Areas/Admin/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Areas_Admin_Views_Blogs_Detail : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<Blog>
     #nullable disable
@@ -61,7 +68,7 @@ using mediumish.Models;
         public async override global::System.Threading.Tasks.Task ExecuteAsync()
         {
             WriteLiteral("\r\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "faaae1003631d479e40adedcec249962e1e0c6c14400", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "faaae1003631d479e40adedcec249962e1e0c6c14599", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -141,7 +148,7 @@ Write(Html.Raw(Model.Description));
 #line default
 #line hidden
 #nullable disable
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "faaae1003631d479e40adedcec249962e1e0c6c17640", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "faaae1003631d479e40adedcec249962e1e0c6c17839", async() => {
                 WriteLiteral("Go Back");
             }
             );

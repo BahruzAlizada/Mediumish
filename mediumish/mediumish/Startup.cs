@@ -1,7 +1,9 @@
 using mediumish.DAL;
+using mediumish.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -26,6 +28,16 @@ namespace mediumish
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddIdentity<AppUser, IdentityRole>(identityoptions =>
+            {
+                identityoptions.User.RequireUniqueEmail=true;
+                identityoptions.User.AllowedUserNameCharacters= "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789._";
+                identityoptions.Password.RequiredLength = 8;
+                identityoptions.Password.RequireNonAlphanumeric = false;
+                identityoptions.Lockout.AllowedForNewUsers = true;
+                identityoptions.Lockout.MaxFailedAccessAttempts = 5;
+                identityoptions.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(1);
+            }).AddDefaultTokenProviders().AddEntityFrameworkStores<AppDbContext>();
             services.AddDbContext<AppDbContext>(options =>
             {
                 options.UseSqlServer(_configuration.GetConnectionString("Default"));
@@ -50,13 +62,14 @@ namespace mediumish
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
                     name: "areas",
-                    pattern: "{area:exists}/{controller=Dashboard}/{action=Index}/{id?}"
+                    pattern: "{area:exists}/{controller=Account}/{action=Login}/{id?}"
             );
                 endpoints.MapControllerRoute(
                     name: "default",
