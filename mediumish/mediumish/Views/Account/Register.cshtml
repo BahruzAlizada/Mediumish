@@ -1,10 +1,5 @@
 ﻿@model RegisterVM
 
-@{
-    Layout = "_AdminAccountLayout";
-}
-
-
 <div class="container-scroller">
     <div class="container-fluid page-body-wrapper full-page-wrapper">
         <div class="content-wrapper d-flex align-items-stretch auth auth-img-bg">
@@ -15,7 +10,7 @@
                         <h4>Welcome back!</h4>
                         <h6 class="font-weight-light">Happy to see you again!</h6>
                         <div class="text-danger" asp-validation-summary="ModelOnly"></div>
-                            <form class="pt-3" method="post">
+                        <form class="pt-3" method="post">
 
                             <div class="form-group">
                                 <label asp-for="FullName">FullName</label>
@@ -33,7 +28,7 @@
 
                             <div class="form-group">
                                 <label asp-for="Username">Username</label>
-                                <div class="input-group"> 
+                                <div class="input-group">
                                     <input asp-for="Username" class="form-control form-control-lg border-left-0" placeholder="Username">
                                 </div>
                             </div>
@@ -59,10 +54,10 @@
                                         Remember me
                                     </label>
                                 </div>
-                                
+
                             </div>
                             <div class="my-3">
-                               <button type="submit" class="btn btn-secondary">Sign Up</button>
+                                <button type="submit" class="btn btn-secondary">Sign Up</button>
                             </div>
 
                             @*<div class="text-center mt-4 font-weight-light">
